@@ -1,9 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Bebas_Neue, Poppins } from 'next/font/google'
-
-const bebas = Bebas_Neue({ weight: ['400'], subsets: ['latin'] });
-const poppins = Poppins({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
+import Header from './header';
+import { poppins } from './fonts';
+import Footer from './footer';
 
 export const metadata: Metadata = {
   title: 'Intervals',
@@ -17,8 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={poppins.className}>
-        {children}
+      <body className={`${poppins.className} min-h-screen`}>
+        <Header />
+        <main className='flex flex-col items-center w-full'>
+          <div className="w-full max-w-screen-xl">
+            {children}
+          </div>
+        </main>
+        <Footer />
       </body>
     </html>
   )
