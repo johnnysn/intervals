@@ -14,7 +14,7 @@ export default function Home() {
         />
         <div className="md:mr-6 flex flex-col gap-2 items-center">
           <h2
-            className={`${bebas.className} text-7xl md:text-8xl leading-none`}
+            className={`${bebas.className} text-6xl md:text-8xl leading-none tracking-wide`}
           >
             Potencialize <br />o seu{' '}
             <span className="font-semibold">treino</span> <br />
@@ -28,8 +28,8 @@ export default function Home() {
             dolor, tempora cupiditate explicabo sint. Autem?
           </p>
 
-          <button className='border border-teal-300 bg-transparent text-teal-300 text-center py-2 px-4 rounded-md'>
-            Começar agora!
+          <button className={`mt-2 border border-teal-300 py-2 px-8 rounded-md bg-transparent hover:bg-teal-300 ${bebas.className} text-teal-300 hover:text-zinc-950 transition-colors duration-300 text-center text-2xl`}>
+            Iniciar agora!
           </button>
         </div>
       </div>
