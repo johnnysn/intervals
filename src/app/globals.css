@@ -6,7 +6,7 @@ body {
   display: grid;
   grid-template-rows: 96px auto 96px;
 
-  @apply bg-zinc-950 text-gray-50;
+  @apply bg-gray-950 text-gray-50;
 }
 
 a {
