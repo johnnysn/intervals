@@ -22,7 +22,7 @@ export default function Home() {
           >
             Potencialize <br />o seu <span className="font-light">treino</span>{' '}
             <br />
-            <span className=" text-teal-300">intervalado</span>
+            <span className="text-teal-300">intervalado</span>
           </h2>
 
           <p className="font-extralight text-sm max-w-[360px] text-center md:text-left">
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       <section id="features" className='flex justify-center gap-12 flex-wrap py-16'>
-        <div className='flex flex-col items-center gap-2 py-4 px-2 rounded w-44 bg-gray-800'>
+        <div className='flex flex-col items-center gap-2 py-4 px-2 rounded w-48 bg-gray-800'>
           <span className='text-lg'><ImClock /></span>
           <h3 className={`${bebas.className} text-xl`}>Otimize o seu tempo</h3>
           <p className='font-thin text-xs text-center'>
@@ -47,7 +47,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className='flex flex-col items-center gap-2 p-3 rounded w-44 bg-gray-800'>
+        <div className='flex flex-col items-center gap-2 py-4 px-2 rounded w-48 bg-gray-800'>
           <span className='text-lg'><ImHeart /></span>
           <h3 className={`${bebas.className} text-xl`}>Melhore a sua saúde</h3>
           <p className='font-thin text-xs text-center'>
@@ -55,7 +55,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className='flex flex-col items-center gap-2 p-3 rounded w-44 bg-gray-800'>
+        <div className='flex flex-col items-center gap-2 py-4 px-2 rounded w-48 bg-gray-800'>
           <span className='text-lg'><ImTarget /></span>
           <h3 className={`${bebas.className} text-xl`}>Atinja suas metas</h3>
           <p className='font-thin text-xs text-center'>

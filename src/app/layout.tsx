@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${poppins.className} min-h-screen`}>
         <Header />
-        <main className='flex flex-col items-center w-full'>
+        <main className='flex flex-col items-center w-full mt-6'>
           <div className="w-full max-w-screen-xl">
             {children}
           </div>

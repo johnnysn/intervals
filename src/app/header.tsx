@@ -31,7 +31,7 @@ export default function Header({}: Props) {
               <Link href={'/about'}>Sobre</Link>
             </li>
             <li>
-              <Link href={'/Login'}>Login</Link>
+              <Link href={'/login'}>Login</Link>
             </li>
           </ul>
         </nav>
