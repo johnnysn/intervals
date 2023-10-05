@@ -7,22 +7,22 @@ export const treinos: Treino[] = [
     intervals: [
       {
         label: 'Correr',
-        seconds: 30,
+        seconds: 15,
         intensity: 2,
       },
       {
         label: 'Descansar',
-        seconds: 30,
+        seconds: 15,
         intensity: 0,
       },
       {
         label: 'Correr',
-        seconds: 30,
+        seconds: 15,
         intensity: 2,
       },
       {
         label: 'Descansar',
-        seconds: 30,
+        seconds: 15,
         intensity: 0,
       },
     ],
@@ -33,12 +33,12 @@ export const treinos: Treino[] = [
     intervals: [
       {
         label: 'Correr',
-        seconds: 30,
+        seconds: 15,
         intensity: 2,
       },
       {
         label: 'Descansar',
-        seconds: 30,
+        seconds: 15,
         intensity: 0,
       },
     ],
@@ -49,12 +49,12 @@ export const treinos: Treino[] = [
     intervals: [
       {
         label: 'Correr',
-        seconds: 30,
+        seconds: 15,
         intensity: 2,
       },
       {
         label: 'Descansar',
-        seconds: 30,
+        seconds: 15,
         intensity: 0,
       },
     ],

@@ -1,8 +1,9 @@
 'use client';
-import { Interval } from '@/data/models/interval';
 import { Treino } from '@/data/models/treino';
 import { useCallback, useEffect, useState } from 'react';
 import Button from './ui/Button';
+import styles from './TreinoPanel.module.css';
+import { bebas } from '@/app/fonts';
 
 type Props = {
   treino: Treino;
@@ -35,7 +36,7 @@ export default function TreinoPanel({ treino }: Props) {
         () =>
           setCurrentTimerState((curr) => {
             const newState = { ...curr };
-            if (curr.timer === 0) {
+            if (curr.timer === 1) {
               if (curr.currentInterval < treino.intervals.length - 1) {
                 newState.currentInterval++;
                 newState.timer =
@@ -70,25 +71,34 @@ export default function TreinoPanel({ treino }: Props) {
 
   const currInterval = treino.intervals[currentTimerState.currentInterval];
 
+  let bgColorClass = 'bg-gray-400';
+  if (currentTimerState.isPlaying) {
+    if (currInterval.intensity == 0) {
+      bgColorClass = 'bg-teal-300';
+    } else if (currInterval.intensity == 1) {
+      bgColorClass = 'bg-orange-300';
+    } else if (currInterval.intensity >= 2) {
+      bgColorClass = 'bg-orange-600';
+    }
+  }
+  
+
   return (
-    <div className={`grid grid-cols-4 border border-gray-50`}>
-      <div
-        className={`bg-orange-600 text-gray-50 flex items-center justify-center p-4`}
-      >
-        Go!
-      </div>
-      <div className="col-span-3 flex items-center justify-center p-4">
-        {currentTimerState.timer}
+    <div className={`${styles['panel']} border rounded py-2 border-gray-50 ${bebas.className}`}>
+      <div className={`${styles['timer']} flex items-center justify-center p-4 text-8xl`}>
+        {currentTimerState.isPlaying ? currentTimerState.timer : '--'}
       </div>
 
-      <div className="col-span-4">{}</div>
-
-      <div className="col-span-2">
-        <Button onClick={playClickHandler}>Start</Button>
+      <div className={`${styles['bar']} ${bgColorClass} flex items-center justify-center h-full text-3xl`}>
+        {currentTimerState.isPlaying ? currInterval.label : 'Clique para iniciar o treino'}
       </div>
 
-      <div className="col-span-2">
-        <Button onClick={stopClickHandler} cancel={true}>Stop</Button>
+      <div className={`${styles['start']} flex justify-center col-span-2`}>
+        <Button onClick={playClickHandler}>Iniciar</Button>
+      </div>
+
+      <div className={`${styles['stop']} flex justify-center col-span-2`}>
+        <Button onClick={stopClickHandler} cancel={true}>Parar</Button>
       </div>
     </div>
   );

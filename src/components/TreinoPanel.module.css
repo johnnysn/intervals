@@ -1,0 +1,28 @@
+.panel {
+  display: grid;
+  grid-template-areas: 
+    "timer timer"
+    "bar bar"
+    "start stop";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 140px 64px 72px;
+  align-items: center;
+  gap: 4px;
+  width: 330px;
+}
+
+.timer {
+  grid-area: timer;
+}
+
+.bar {
+  grid-area: bar;
+}
+
+.start {
+  grid-area: start;
+}
+
+.stop {
+  grid-area: stop;
+}
