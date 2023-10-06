@@ -1,18 +1,18 @@
 import React from 'react'
-import { treinos } from '@/data/treinos'
 import { bebas } from '@/app/fonts';
 import TreinoPanel from '@/components/TreinoPanel';
+import treinoService from '@/services/treino-service';
 
 type Props = {
   params: { id: string }
 }
 
-function getTreino(id: string) {
-  return treinos.find(t => t.id === id);
+async function fetchTreino(id: string) {
+  return treinoService.get(id);
 }
 
-export default function Page({params}: Props) {
-  const treino = getTreino(params.id);
+export default async function Page({params}: Props) {
+  const treino = await fetchTreino(params.id);
 
   return (
     <div className='flex flex-col gap-4 items-center'>

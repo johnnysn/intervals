@@ -1,5 +1,5 @@
 'use client';
-import { Treino } from '@/data/models/treino';
+import { Treino } from '@/models/treino';
 import { useCallback, useEffect, useState } from 'react';
 import Button from './ui/Button';
 import styles from './TreinoPanel.module.css';
