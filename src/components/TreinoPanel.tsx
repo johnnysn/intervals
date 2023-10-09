@@ -81,6 +81,11 @@ export default function TreinoPanel({ treino }: Props) {
       bgColorClass = 'bg-orange-600';
     }
   }
+
+  const totalTime = treino.intervals.map(i => i.seconds).reduce((v1, v2) => v1 + v2, 0);
+  const remainingTime = treino.intervals.filter((interval, index) => index > currentTimerState.currentInterval)
+    .map(i => i.seconds).reduce((v1, v2) => v1 + v2, 0) + currentTimerState.timer;
+  const progress = Math.round(remainingTime * 100 / totalTime);
   
 
   return (
@@ -91,6 +96,10 @@ export default function TreinoPanel({ treino }: Props) {
 
       <div className={`${styles['bar']} ${bgColorClass} flex items-center justify-center h-full text-3xl`}>
         {currentTimerState.isPlaying ? currInterval.label : 'Clique para iniciar o treino'}
+      </div>
+
+      <div className={`${styles['progress']} bg-gray-700 h-full`}>
+        <div className='bg-teal-600 h-full' style={{width: `${progress}%`}}></div>
       </div>
 
       <div className={`${styles['start']} flex justify-center col-span-2`}>

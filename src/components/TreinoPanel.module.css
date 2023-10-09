@@ -3,11 +3,11 @@
   grid-template-areas: 
     "timer timer"
     "bar bar"
+    "progress progress"
     "start stop";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 140px 64px 72px;
+  grid-template-rows: 140px 64px 32px 72px;
   align-items: center;
-  gap: 4px;
   width: 330px;
 }
 
@@ -17,6 +17,10 @@
 
 .bar {
   grid-area: bar;
+}
+
+.progress {
+  grid-area: progress;
 }
 
 .start {
