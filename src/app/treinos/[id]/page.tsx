@@ -14,12 +14,16 @@ async function fetchTreino(id: string) {
 export default async function Page({params}: Props) {
   const treino = await fetchTreino(params.id);
 
+  if (!treino) {
+    throw new Error("Treino não encontrado.");
+  }
+
   return (
     <div className='flex flex-col gap-4 items-center'>
-      <h2 className={`${bebas.className} text-3xl`}>{treino?.label}</h2>
+      <h2 className={`${bebas.className} text-3xl`}>{treino.label}</h2>
 
       <div>
-        {treino && <TreinoPanel treino={treino} />}
+        <TreinoPanel treino={treino} />
       </div>
     </div>
   )

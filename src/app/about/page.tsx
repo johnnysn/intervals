@@ -4,7 +4,7 @@ type Props = {};
 
 export default function Page({}: Props) {
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center p-2'>
       <article className="prose prose-invert">
         <h2>Sobre o Intervals</h2>
 
